@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{block.super}}
+
+<head>
+    <!-- <h1>ABOUT US</h1> 
+    <h2> Instrumentalist</h2>
+<p class="about">
+This is a web based application that enables church officials and event organisers to manage their operations especially the coordination of services in matters concerning the logistics at a cost and effort significantly lower than the expense they are currently undergoing due to lack of a proper
+formalised system.It also act as a source of income to the developers and the players of the various instruments.
+</p> -->
+    
+    <h1>SERVICES </h1>
+    <p> Are you looking for an instrumentalist???Do not waste time calculating routes and asking help from strangers.Just contact and make a booking with expert Djs,Pianist,guitarist,violinist,Drummer  and trumpeter in  instrumentalist within a few minutes.Our services are of quality.Our experts use only genuine and from top brands. This is the perfect place for you funny and relaxation.Welcome all!!
+</p>
+
+     <h1> AVAILABLE CLIENTS</h1>
+
+  
+  
+     <div class="container-fluid">
+      <div class="row">
+        {% for client in clients %}
+          <article class='media content-section'>
+            <div class ='media-body'>
+              <div class="article-metadata">
+                <a class="mr-2"href="#"> CLIENT NAME: {{client.first_name}} {{client.last_name}}</a>
+                <small class="text-muted">{{client.pub_date}}</small>
+             </div>
+             <div class ="article-content">
+               <h2>NEEDED EXPERTISE: {{client.needed_expertise}}</h2>
+               <p> EMAIL: {{client.email}}</p>
+               <p> PHONE NUMBER:{{client.phone_number}}</p>
+
+               <a class="btn btn-outline-info" href="{%url 'player'%}">Accept the request</a>
+             </div>
+             
+
+           </div>
+
+         </article>
+        </div>
+    {% endfor %}
+       
+      </div>
+  {% endblock %}
