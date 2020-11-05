@@ -27,12 +27,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'wr1p11s*m@elg+e7d6mu#^$31q=*4*d00n(yh6@i-ae5na2e-6'
+SECRET_KEY = 'wr1p11s*m@elg+e7d6mu#^$31q=*4*d00n(yh6@i-ae5na2e-6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['dbetingdjango.herokuapp.com']
+ALLOWED_HOSTS = ['dbetingdjango.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -52,13 +52,14 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware'
+   
 ]
 
 ROOT_URLCONF = 'dbeting.urls'
