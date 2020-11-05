@@ -1,1 +1,1 @@
-web: gunicorn dbeting.wsgi --log-file- 
+web: gunicorn dbeting.wsgi 
